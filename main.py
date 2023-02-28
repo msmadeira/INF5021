@@ -57,7 +57,7 @@ for episode in range(num_training_episodes):
         #ending episode
         if done or truncated:
             break
-        
+
     #cutting down exploration by reducing epsilon
     epsilon = min_epsilon + (max_epsilon - min_epsilon) * np.exp(-decay * episode)
     
