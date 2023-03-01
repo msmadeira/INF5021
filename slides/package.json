@@ -1,0 +1,18 @@
+{
+  "name": "inf5021",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.38.4",
+    "@slidev/theme-default": "*",
+    "@slidev/theme-seriph": "*",
+    "slidev-theme-purplin": "^1.2.0"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.30.0"
+  }
+}
