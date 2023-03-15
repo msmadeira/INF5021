@@ -21,8 +21,7 @@ image: './img/slide2.gif'
 
 - Simulação física é uma área de extrema relevância para a computação, porém são problemas de grande complexidade.
 - Esse trabalho busca servir como mais uma referência de como podemos usar inteligência artificial para resolver essa classe de problemas.
-- Agente de aprendizado de reforço para um ambiente de simulação física em 2D.
-  - <span class="text-sm">Python, Gymnasium</span>
+- Agente de aprendizado de reforço para um ambiente de simulação física em 2D (<span class="text-sm">Python, Gymnasium</span>).
 
 <BarBottom  title="INF5021 - Matheus Madeira">
   <Item text="msmadeira/INF5021">
@@ -33,15 +32,15 @@ image: './img/slide2.gif'
 
 # Objetivos
 
-<div class="flex items-center py-8">
+<div class="flex items-center py-6">
 <div class="flex flex-col mx-auto">
 <div class="p-3 border border-purple-200 rounded-md shadow-md mb-8 w-150">
-<span class="text-xl font-semibold mb-2 border-b-2 border-purple inline-flex">Objetivo Geral</span> <br>
-<span class="ml-2 text-sm leading-relaxed">Desenvolver um agente por aprendizado por reforço para o ambiente Box2D Bipedal Walker.</span>
+<span class="text-2xl font-semibold mb-2 border-b-2 border-purple inline-flex">Objetivo Geral</span> <br>
+<span class="ml-2 text-xl leading-relaxed">Desenvolver um agente por aprendizado por reforço para o ambiente Box2D Bipedal Walker.</span>
 </div>
 
 <div class="p-3 border border-purple-200 rounded-md shadow-md w-150">
-<span class="text-xl font-semibold mb-2 border-b-2 border-purple inline-flex">Objetivos Específicos</span> <br>
+<span class="text-2xl font-semibold mb-2 border-b-2 border-purple inline-flex">Objetivos Específicos</span> <br>
 <div class="ml-2 text-sm leading-relaxed">
 <ul>
 <li>Implementar um agente de aprendizado por reforço</li>
@@ -59,15 +58,72 @@ image: './img/slide2.gif'
 </BarBottom>
 
 ---
-layout: image-x
-image: './img/related-works.jpg'
+
+# Trabalhos Relacionados
+
+## <span class="text-2xl">Gambim (2021). _Aprendizado por Reforço em Jogos de Estratégia_</span>
+
+<div class="grid grid-cols-5 gap-x-5 px-5 pt-5">
+<div class="col-span-3">
+
+- Desenvolvimento de um agente por aprendizado por reforço para o jogo para o jogo de estratégia Battle for Wesnoth.
+- Desenvolvimento de um ambiente para o jogo em OpenAI Gym.
+- Espaço de ações discreto, espaço de observação contínuo.
+- Implementação em Deep Q-learning.
+
+</div>
+<div class="col-span-2">
+  <img src="/img/related-works-1.jpg" class="max-w-full"/>
+</div>
+</div>
+
+<BarBottom  title="INF5021 - Matheus Madeira">
+  <Item text="msmadeira/INF5021">
+    <carbon:logo-github />
+  </Item>
+</BarBottom>
 ---
 
 # Trabalhos Relacionados
 
-- Tiago Reck Gambim. _Aprendizado por Reforço em Jogos de Estratégia_ <br> <span style="color: rgb(76, 29, 149, 0.4)">Trabalho de Conclusão de Curso (Graduação em Engenharia de Computação) - PUCRS, 2021.</span>
+## <span class="text-2xl">Song et al (2018). _Recurrent Deterministic Policy Gradient Method for Bipedal Locomotion on Rough Terrain Challenge_</span>
 
-### <span class="text-xs">NOTA: Adicionar mais 2 trabalhos relacionados</span> 
+<div class="grid grid-cols-5 gap-x-5 px-5 pt-5">
+<div class="col-span-3">
+
+- Desenvolvimento de um deep learning framework capaz de resolver problemas de locomoção parcialmente observáveis. Baseado em Recurrent Deterministic Policy Gradient (RDPG).
+- Algumas melhorias: (i) tail-step boostrap da diferença temporal, injeção de experiências externas de outros agentes, entre outros.
+- Utilização do ambiente Bipedal Walker do OpenAI Gym no modo Hardcore.
+
+</div>
+<div class="col-span-2">
+  <img src="/img/related-works-2.png" class="max-w-full"/>
+</div>
+</div>
+
+<BarBottom  title="INF5021 - Matheus Madeira">
+  <Item text="msmadeira/INF5021">
+    <carbon:logo-github />
+  </Item>
+</BarBottom>
+---
+
+# Trabalhos Relacionados
+
+## <span class="text-2xl">Mishra et al (2021). _Environment Interaction of a Bipedal Robot  using Model-Free Control Framework Hybrid  off-Policy and on-Policy Reinforcement  Learning Algorithm_</span>
+
+<div class="grid grid-cols-5 gap-x-5">
+<div class="col-span-3 pt-5">
+
+- Desenvolvimento de um algoritmo híbrido de DDPG e PPO para resolver o problema BipedalWalker Hardcore.
+- Um algoritmo off-policy (DDPG) e um on-policy (PPO) trabalhando juntos.
+- Trazendo a eficiência de dados off-policy e usando o gradiente de alta variância de on-policy.
+
+</div>
+<div class="col-span-2">
+  <img src="/img/related-works-3.png" class="max-w-full"/>
+</div>
+</div>
 
 <BarBottom  title="INF5021 - Matheus Madeira">
   <Item text="msmadeira/INF5021">
@@ -116,11 +172,33 @@ $$ \begin{array}{c} \underbrace{Q(s,a)}_{\scriptstyle\text{Novo valor}}=\underbr
 
 ---
 
+# Fundamentação Teórica
+
+## DDPG
+- Model-free learning
+
+<div class="flex flex-col">
+  <div class="mx-auto">
+    <img src="/img/ddpg.png" class="w-130"/>
+  </div>
+</div>
+
+<BarBottom  title="INF5021 - Matheus Madeira">
+  <Item text="msmadeira/INF5021">
+    <carbon:logo-github />
+  </Item>
+</BarBottom>
+
+---
+
 # Metodologia
 
 ## Gymnasium
 
+<div class="mt-4">
+
 - Biblioteca contendo uma diversa coleção de diferentes ambientes para aprendizado por reforço.
+</div>
  
 <br>
 
@@ -129,7 +207,7 @@ import gymnasium as gym
 env = gym.make("LunarLander-v2", render_mode="human")
 observation, info = env.reset(seed=42)
 for _ in range(1000):
-   action = env.action_space.sample()  # this is where you would insert your policy
+   action = env.action_space.sample()
    observation, reward, terminated, truncated, info = env.step(action)
 
    if terminated or truncated:
@@ -152,12 +230,14 @@ imageOrder: 2
 # Metodologia
 
 ## Bipedal Walker
+<div class="mt-4">
 
 - Ambiente com um robô com 4 juntas que caminha num terreno levemente desigual.
 - Para resolução é necessário 300 pontos em 1600 passos de tempo.
 - Recompensas são obtidas por se mover para frente, totalizando 300 pontos ao final. 
   - Se o robô cair, -100 pontos. 
   - Aplicar torque ao motor custa uma pequena quantia de pontos.
+</div>
 
 <BarBottom  title="INF5021 - Matheus Madeira">
   <Item text="msmadeira/INF5021">
@@ -171,13 +251,16 @@ imageOrder: 2
 
 ## Bipedal Walker
 
-### Estado consiste de (i) velocidade do ângulo do casco, (ii) velocidade angular, (iii) velocidade horizontal, (iv) velocidade vertical, (v) posição das juntas e sua velocidade angular, (vi) pernas estão em contato com o chão, e (vii) 10 medições de telêmetro.
+### Estado consiste de (i) velocidade do ângulo do casco, (ii) velocidade angular, (iii) velocidade horizontal, (iv) velocidade vertical, (v) posição das juntas, sua velocidade angular e se a perna está em contato com o chão, e (vii) 10 medições de telêmetro.
+
+<div class="mt-4">
 
 | Espaço de ação  | Box(-1.0, 1.0, (4,), float32) |
 |---|--|
 | Forma do espaço de observação |  (24,) |
 | Espaço de observação Máximo | [3.14, 5, 5, 5, 3.14, 5, 3.14, 5, 5, 3.14, 5, 3.14, 5, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] |
 | Espaço de observação Mínimo | [-3.14, -5, -5, -5, -3.14, -5, -3.14, -5, 0, -3.14, -5, -3.14, -5, -0, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1] |
+</div>
 
 <BarBottom  title="INF5021 - Matheus Madeira">
   <Item text="msmadeira/INF5021">
@@ -195,35 +278,76 @@ imageOrder: 2
 
 # Metodologia
 
-### Solução
+## Solução 1
 
-- Discretização do estado de observação do ambiente
-- Definição das variáveis do ambiente necessárias para a solução (NOTA: adicionar assim que terminar)
-- Divisão de cada uma dessas variáveis em x (NOTA, ainda em testes) partes iguais
+- Discretização do espaço de observação e do espaço de ação do ambiente.
+- Divisão de variáveis do espaço de ação em intervalos de 0.2 (10 partes).
+- Divisão de variáveis contínuas do espaço de observação em intervalos de 0.7 (10 partes).
+- Variáveis de observação utilizadas: velocidade do ângulo do casco, pernas estão em contato com o chão, posição das juntas.
+
+</div>
+
+<BarBottom  title="INF5021 - Matheus Madeira">
+  <Item text="msmadeira/INF5021">
+    <carbon:logo-github />
+  </Item>
+</BarBottom>
+
+---
+
+# Metodologia
+
+## Solução 1
+
+- Não foi possível adicionar mais variáveis de observação devido a memória e tempo de execução
 - Etapas:
-  - Implementação do Agente (α = X, γ = Y, ε = Z (NOTA))
+  - Implementação do Agente
+    - α = 0.7
+    - γ = 0.618
+    - ε descrescente, decaimento de 1% por episódio, valor mínimo: 0.01
+  - Treinamento
+  - Comparação
+  
+
+<BarBottom  title="INF5021 - Matheus Madeira">
+  <Item text="msmadeira/INF5021">
+    <carbon:logo-github />
+  </Item>
+</BarBottom>
+
+---
+
+# Solução 1: Resultados
+
+<div class="grid grid-cols-2 gap-x-5 px-5">
+<div class="flex flex-col">
+  <img src="/img/resultado-solucao-1.jpg" class="max-w-full"/>
+  <span class="mx-auto mt-3 text-center">Agente DDPG - Recompensa média -89.9</span>
+</div>
+<div class="flex flex-col">
+  <img src="/img/resultado-random.jpg" class="max-w-full"/>
+  <span class="mx-auto mt-3 text-center">Agente aleatório - Recompensa média -99.6</span>
+</div>
+</div>
+
+<BarBottom  title="INF5021 - Matheus Madeira">
+  <Item text="msmadeira/INF5021">
+    <carbon:logo-github />
+  </Item>
+</BarBottom>
+
+---
+
+# Metodologia
+
+### Solução 2
+
+- Utilização de uma rede neural codificada utilizando PyTorch, derivada a partir do paper original [2015].
+- Etapas:
+  - Implementação do código para fazer uso da rede neural (parâmetros XXXXX)
   - Treinamento
   - Comparação
 
-### <span class="text-xs">NOTA: Se houver grande modificação na metodologia devido a implementação, atualizar na fundamentação teórica</span>
-
-</div>
-<BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="msmadeira/INF5021">
-    <carbon:logo-github />
-  </Item>
-</BarBottom>
-
----
-
-# Resultados
-
-<div class="flex flex-col">
-  <div class="mx-auto">
-    <img src="/img/resultados.png" class="w-100"/>
-    <span class="text-xs">NOTA: Atualizar com resultado concreto médio (Epsilon + recompensa)</span>
-  </div>
-</div>
 
 <BarBottom  title="INF5021 - Matheus Madeira">
   <Item text="msmadeira/INF5021">
@@ -233,16 +357,16 @@ imageOrder: 2
 
 ---
 
-# Resultados
+# Solução 2: Resultados
 
 <div class="grid grid-cols-2 gap-x-5 px-5">
-<div>
-  <img src="/img/resultados.png" class="max-w-full"/>
-  <span class="text-xs">NOTA: Atualizar com resultado concreto melhor resultado (Epsilon + recompensa)</span>
+<div class="flex flex-col">
+  <img src="/img/resultado-solucao-2.png" class="max-w-full"/>
+  <span class="mx-auto mt-3 text-center">Agente DDPG - Recompensa média XXXXX</span>
 </div>
-<div>
-  <img src="/img/resultados.png" class="max-w-full"/>
-  <span class="text-xs">NOTA: Atualizar com resultado concreto pior resultado (Epsilon + recompensa)</span>
+<div class="flex flex-col">
+  <img src="/img/resultado-solucao-1.jpg" class="max-w-full"/>
+  <span class="mx-auto mt-3 text-center">Agente Q-learning - Recompensa média -89.9</span>
 </div>
 </div>
 
@@ -272,9 +396,9 @@ position: center
 <br>
 
 - Foi possível obter um maior aprofundamento na área de IA, desenvolvendo habilidades práticas tanto com ferramentas bem utilizadas na área, quanto com a formulação de soluções.
-- O resultado do trabalho consegue trazer uma contribuição como mais uma referência de solução para a classe de problemas escolhido.
+- O resultado do trabalho consegue trazer uma contribuição como mais uma referência de desenvolvimento para a classe de problemas escolhido.
 - Melhorias futuras:
-  - Mais implementações para comparação (DQN, PPO, etc)
+  - Mais implementações para comparação (TP3, PPO, etc)
   - Implementação para ambientes mais complexos
 
 <BarBottom  title="INF5021 - Matheus Madeira">
@@ -287,10 +411,26 @@ position: center
 
 # Referências
 
-- Richard S. Sutton and Andrew G. Barto. <br> _Reinforcement Learning: An Introduction._ <br> <span style="color: rgb(76, 29, 149, 0.4)">The MIT Press, Cambridge, MA, 2018.</span>
-- Alexander Panin. <br> _Introduction to Reinforcement Learning: On-policy vs off-policy, Nov, 2020._ <br>
-- Gelana Tostaeva. <br> _Introduction to Q-learning with OpenAI Gym, Abr, 2020._ <br>
-- Costa Huang. <br> _CleanRL (Clean Implementation of RL Algorithms), Abr, 2020._ <br>
+- Sutton, R.S. & Barto, A.G. (1998). _Reinforcement Learning: An Introduction._ <br> <span style="color: rgb(76, 29, 149, 0.4)">The MIT Press, Cambridge, MA.</span>
+- Panin, A. (2020). _Introduction to Reinforcement Learning: On-policy vs off-policy._ <br>
+- Tostaeva, G. (2020). _Introduction to Q-learning with OpenAI Gym._ <br>
+- Huang, C. (2020).  _CleanRL (Clean Implementation of RL Algorithms)._ <br>
+- Gambim, T.R. (2021). _Aprendizado por Reforço em Jogos de Estratégia._ <br> <span style="color: rgb(76, 29, 149, 0.4)">TCC (Graduação em Engenharia de Computação) - PUCRS.</span>
+- Song, D.R. & Yang, C. & McGreavy, C. & Li, Z. (2018). _Recurrent Deterministic Policy Gradient Method for Bipedal Locomotion on Rough Terrain Challenge._ <br> <span style="color: rgb(76, 29, 149, 0.4)">15th International Conference on Control, Automation, Robotics and Vision (ICARCV), Singapore.</span>
+
+
+<BarBottom  title="INF5021 - Matheus Madeira">
+  <Item text="msmadeira/INF5021">
+    <carbon:logo-github />
+  </Item>
+</BarBottom>
+
+---
+
+# Referências
+
+- Mishra, P.K. & Prakash, P. (2021). _Environment Interaction of a Bipedal Robot  using Model-Free Control Framework Hybrid  off-Policy and on-Policy Reinforcement  Learning Algorithm._ <br> <span style="color: rgb(76, 29, 149, 0.4)">International Journal of  Innovative Science and Research Technology.</span>
+- Lillicrap, T.P. & Hunt, J.J. & Pritzel, A. & Heess, N. & Erez, T. & Tassa, Y. & Silver, D. & Wierstra, D. (2015). _Continuous control with deep reinforcement learning._ <br> <span style="color: rgb(76, 29, 149, 0.4)">International Conference on Learning Representations.</span>
 
 <BarBottom  title="INF5021 - Matheus Madeira">
   <Item text="msmadeira/INF5021">
@@ -305,10 +445,9 @@ class: "text-center"
 
 # Obrigado!
 
-### <span class="text-xs">NOTA: Upar apresentação final, tirar mensagem de "em construção da raíz"</span>
-### Link Apresentação: [mathsmadeira.com/ufrgs/INF5021/](https://mathsmadeira.com/INF5021/)
-
-[GitHub Repo](https://github.com/msmadeira/INF5021)
+### <span class="text-xs">NOTA: Upar apresentação final</span>
+## <span class="text-2xl">Link Apresentação: [mathsmadeira.com/ufrgs/INF5021/](https://mathsmadeira.com/INF5021/)</span>
+## <span class="text-2xl">GitHub Repo: [https://github.com/msmadeira/INF5021](https://github.com/msmadeira/INF5021)</span>
 
 <BarBottom  title="INF5021 - Matheus Madeira">
   <Item text="msmadeira/INF5021">

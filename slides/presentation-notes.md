@@ -2,18 +2,28 @@
 
 Informações extras para cada Ponto
 
-## Slide 2
+## Slide Introdução
 
 - Isso tanto para estudar características físicas, quanto para resolver problemas do mundo real.
   - Mas uma simulação física, geralmente necessita de muitas variáveis devida a alta complexidade desses problemas no nosso cotidiano. Uma alternativa para diminuir a complexidade desses problemas e ainda assim conseguir os estudar é ir para o mundo 2D.
 
-# Slide 4
+# Slide Trabalhos Relacionados I
 
 - De trabalhos relacionados temos o trabalho do Tiago Reck Gambim, Aprendizado por Reforço em jogos de estratégia.
-TCC de Engenharia de Computação na PUCRS. Que basicamente foca em desenvolver um ambiente, e um agente para o jogo Battle for Wesnoth, um jogo
-de estratégia em turnos em um mapa hexagonal. Esse trabalho se relaciona bem pelo fato de usar as mesmas ferramentas, referências e abordagem.
+  TCC de Engenharia de Computação na PUCRS. Que basicamente foca em desenvolver um ambiente, e um agente para o jogo Battle for Wesnoth, um jogo
+  de estratégia em turnos em um mapa hexagonal. Esse trabalho se relaciona bem pelo fato de usar as mesmas ferramentas, referências e abordagem.
 
-# Slide 5
+EXPLICAR UM POUCO MELHOR O JOGO
+
+# Slide Trabalhos Relacionados II
+
+ESCREVER NOTAS COM BASE NO ARTIGO
+
+# Slide Trabalhos Relacionados III
+
+ESCREVER NOTAS COM BASE NO ARTIGO
+
+# Slide Fundamentação Teórica I
 
 - Problemas de aprendizado por reforço envolvem entender o que fazer, como mapear situações a ações, de maneira a maximizar uma recompensa. 
   - Onde a agente não é ensinado que ações tomar, ele deve descobrir qual a maior recompensa tentando, as suas ações influenciam seus resultados futuros. 
@@ -30,6 +40,6 @@ de estratégia em turnos em um mapa hexagonal. Esse trabalho se relaciona bem pe
   - Começa então o processo de aprendizado, podendo ser feito exploração, ou escolhendo a opção com maior recompensa.
   - Quando o agente escolhe uma ação e muda para outro estado o seu valor recompensa será recalculado, normalmente pela Equação de Bellman.
 
-# Slide 10
+# Slide Metodologia Solução I
 
-- Como o estado de observação é contínuo, o único jeito de se conseguir desenvolver uma solução seria discretizar esse espaço.
+- Como o estado de observação é contínuo, o único jeito de se conseguir desenvolver uma solução com Q-learning seria discretizar esse espaço.

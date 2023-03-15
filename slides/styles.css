@@ -1,0 +1,33 @@
+.slidev-page-1 {
+    h1 {
+        font-size: 3.75rem !important;
+    }
+
+    p {
+        font-size: 2rem !important;
+    }
+}
+
+h1 {
+    font-size: 3rem !important;
+}
+
+h2 {
+    font-size: 2rem !important;
+}
+
+h3 {
+    font-size: 1.1rem !important;
+}
+
+ul li, table {
+    font-size: 1.25rem !important;
+}
+
+.katex-display {
+    font-size: 1.4rem !important;
+}
+
+code {
+    font-size: 1.25rem !important;
+}
