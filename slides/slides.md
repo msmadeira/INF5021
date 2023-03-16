@@ -1,5 +1,6 @@
 ---
 theme: "purplin"
+colorSchema: 'light'
 ---
 
 # Aprendizado por Reforço em Simuladores de Física Bidimensionais
@@ -445,7 +446,6 @@ class: "text-center"
 
 # Obrigado!
 
-### <span class="text-xs">NOTA: Upar apresentação final</span>
 ## <span class="text-2xl">Link Apresentação: [mathsmadeira.com/ufrgs/INF5021/](https://mathsmadeira.com/INF5021/)</span>
 ## <span class="text-2xl">GitHub Repo: [https://github.com/msmadeira/INF5021](https://github.com/msmadeira/INF5021)</span>
 
