@@ -59,80 +59,6 @@ image: './img/slide2.gif'
 </BarBottom>
 
 ---
-
-# Trabalhos Relacionados
-
-## <span class="text-2xl">Gambim (2021). _Aprendizado por Reforço em Jogos de Estratégia_</span>
-
-<div class="grid grid-cols-5 gap-x-5 px-5 pt-5">
-<div class="col-span-3">
-
-- Desenvolvimento de um agente por aprendizado por reforço para o jogo para o jogo de estratégia Battle for Wesnoth.
-- Desenvolvimento de um ambiente para o jogo em OpenAI Gym.
-- Espaço de ações discreto, espaço de observação contínuo.
-- Implementação em Deep Q-learning.
-
-</div>
-<div class="col-span-2">
-  <img src="/img/related-works-1.jpg" class="max-w-full"/>
-</div>
-</div>
-
-<BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="">
-    <SlideCurrentNo />
-  </Item>
-</BarBottom>
----
-
-# Trabalhos Relacionados
-
-## <span class="text-2xl">Song et al (2018). _Recurrent Deterministic Policy Gradient Method for Bipedal Locomotion on Rough Terrain Challenge_</span>
-
-<div class="grid grid-cols-5 gap-x-5 px-5 pt-5">
-<div class="col-span-3">
-
-- Desenvolvimento de um deep learning framework capaz de resolver problemas de locomoção parcialmente observáveis. Baseado em Recurrent Deterministic Policy Gradient (RDPG).
-- Algumas melhorias: (i) tail-step boostrap da diferença temporal, injeção de experiências externas de outros agentes, entre outros.
-- Utilização do ambiente Bipedal Walker do OpenAI Gym no modo Hardcore.
-
-</div>
-<div class="col-span-2">
-  <img src="/img/related-works-2.png" class="max-w-full"/>
-</div>
-</div>
-
-<BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="">
-    <SlideCurrentNo />
-  </Item>
-</BarBottom>
----
-
-# Trabalhos Relacionados
-
-## <span class="text-2xl">Mishra et al (2021). _Environment Interaction of a Bipedal Robot  using Model-Free Control Framework Hybrid  off-Policy and on-Policy Reinforcement  Learning Algorithm_</span>
-
-<div class="grid grid-cols-5 gap-x-5">
-<div class="col-span-3 pt-5">
-
-- Desenvolvimento de um algoritmo híbrido de DDPG e PPO para resolver o problema BipedalWalker Hardcore.
-- Um algoritmo off-policy (DDPG) e um on-policy (PPO) trabalhando juntos.
-- Trazendo a eficiência de dados off-policy e usando o gradiente de alta variância de on-policy.
-
-</div>
-<div class="col-span-2">
-  <img src="/img/related-works-3.png" class="max-w-full"/>
-</div>
-</div>
-
-<BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="">
-    <SlideCurrentNo />
-  </Item>
-</BarBottom>
-
----
 layout: image-x
 image: './img/slide4.gif'
 imageOrder: 2
@@ -182,6 +108,81 @@ $$ \begin{array}{c} \underbrace{Q(s,a)}_{\scriptstyle\text{Novo valor}}=\underbr
   <div class="mx-auto">
     <img src="/img/ddpg.png" class="w-130"/>
   </div>
+</div>
+
+<BarBottom  title="INF5021 - Matheus Madeira">
+  <Item text="">
+    <SlideCurrentNo />
+  </Item>
+</BarBottom>
+
+---
+
+# Trabalhos Relacionados
+
+## <span class="text-2xl">Gambim (2021). _Aprendizado por Reforço em Jogos de Estratégia_</span>
+
+<div class="grid grid-cols-5 gap-x-5 px-5 pt-5">
+<div class="col-span-3">
+
+- Desenvolvimento de um agente por aprendizado por reforço para o jogo para o jogo de estratégia Battle for Wesnoth.
+- Desenvolvimento de um ambiente para o jogo em OpenAI Gym.
+- Espaço de ações discreto, espaço de observação contínuo.
+- Implementação em Deep Q-learning.
+
+</div>
+<div class="col-span-2">
+  <img src="/img/related-works-1.jpg" class="max-w-full"/>
+</div>
+</div>
+
+<BarBottom  title="INF5021 - Matheus Madeira">
+  <Item text="">
+    <SlideCurrentNo />
+  </Item>
+</BarBottom>
+---
+
+# Trabalhos Relacionados
+
+## <span class="text-2xl">Song et al (2018). _Recurrent Deterministic Policy Gradient Method for Bipedal Locomotion on Rough Terrain Challenge_</span>
+
+<div class="grid grid-cols-5 gap-x-5 px-5 pt-5">
+<div class="col-span-3">
+
+- Desenvolvimento de um deep learning framework capaz de resolver problemas de locomoção parcialmente observáveis. Baseado em Recurrent Deterministic Policy Gradient (RDPG).
+- Algumas melhorias: (i) tail-step boostrap da diferença temporal, injeção de experiências externas de outros agentes, entre outros.
+- Utilização do ambiente Bipedal Walker do OpenAI Gym no modo Hardcore.
+
+</div>
+<div class="col-span-2">
+  <img src="/img/related-works-2.png" class="max-w-full"/>
+</div>
+</div>
+
+<BarBottom  title="INF5021 - Matheus Madeira">
+  <Item text="">
+    <SlideCurrentNo />
+  </Item>
+</BarBottom>
+
+---
+
+# Trabalhos Relacionados
+
+## <span class="text-2xl">Mishra et al (2021). _Environment Interaction of a Bipedal Robot  using Model-Free Control Framework Hybrid  off-Policy and on-Policy Reinforcement  Learning Algorithm_</span>
+
+<div class="grid grid-cols-5 gap-x-5">
+<div class="col-span-3 pt-5">
+
+- Desenvolvimento de um algoritmo híbrido de DDPG e PPO para resolver o problema BipedalWalker Hardcore.
+- Um algoritmo off-policy (DDPG) e um on-policy (PPO) trabalhando juntos.
+- Trazendo a eficiência de dados off-policy e usando o gradiente de alta variância de on-policy.
+
+</div>
+<div class="col-span-2">
+  <img src="/img/related-works-3.png" class="max-w-full"/>
+</div>
 </div>
 
 <BarBottom  title="INF5021 - Matheus Madeira">

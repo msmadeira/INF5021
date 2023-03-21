@@ -8,7 +8,7 @@ Has do add `export PATH="/opt/homebrew/opt/swig@3/bin:$PATH"` to `.zshrc`, which
 ## TODO
 - [ ] deixar mais suscinto o texto;
 - [X] númerar slides;
-- [ ] Fundamentação teórica antes dos trabalhos relacionados;
+- [X] Fundamentação teórica antes dos trabalhos relacionados;
 - [ ] Relacionar MuJoCo;
 - [ ] Melhorar a explicação de DDPG;
 - [ ] Reread taking notes for presentation: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8581309 
