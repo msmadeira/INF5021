@@ -229,6 +229,7 @@ imageOrder: 2
 ## Bipedal Walker
 <div class="mt-8">
 
+- Box2D Bipedal Walker
 - Robô com 4 juntas que caminha num terreno levemente desigual.
 - Objetivo de 300 pontos em 1600 passos.
   - Queda -> -100 pontos. 

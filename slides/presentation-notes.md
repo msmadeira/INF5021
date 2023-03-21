@@ -58,6 +58,10 @@ ESCREVER NOTAS COM BASE NO ARTIGO
 
 - Biblioteca contendo uma diversa coleção de diferentes ambientes para aprendizado por reforço.
 
+# Metodologia II
+
+- Box2D é uma engine de física para jogos 2D. Para quem conhece o ambiente de simuladores de física, essa engine seria uma versão simplificada de MuJoCo, enquanto MuJoCo é um simulator de propósito geral podendo lidar com simulação de física avançada ou mais simples 2D, o Box2D é só para jogos 2D mesmo.
+
 # Metodologia III
 
 - Estado consiste de (i) velocidade do ângulo do casco, (ii) velocidade angular, (iii) velocidade horizontal, (iv) velocidade vertical, (v) posição das juntas, sua velocidade angular e se a perna está em contato com o chão, e (vii) 10 medições de telêmetro.
