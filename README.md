@@ -6,7 +6,7 @@ Also, I had a lot of different issues with Box2D, which only seized after instal
 Has do add `export PATH="/opt/homebrew/opt/swig@3/bin:$PATH"` to `.zshrc`, which is showing to only work
 
 ## TODO
-- [ ] deixar mais suscinto o texto;
+- [X] deixar mais suscinto o texto;
 - [X] númerar slides;
 - [X] Fundamentação teórica antes dos trabalhos relacionados;
 - [ ] Relacionar MuJoCo;

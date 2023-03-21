@@ -20,8 +20,8 @@ image: './img/slide2.gif'
 
 # Introdução
 
-- Simulação física é uma área de extrema relevância para a computação, porém são problemas de grande complexidade.
-- Esse trabalho busca servir como mais uma referência de como podemos usar inteligência artificial para resolver essa classe de problemas.
+- Simulação física é uma área de extrema relevância para a computação.
+- Esse trabalho busca servir como mais uma referência de aplicação de IA.
 - Agente de aprendizado de reforço para um ambiente de simulação física em 2D (<span class="text-sm">Python, Gymnasium</span>).
 
 <BarBottom  title="INF5021 - Matheus Madeira">
@@ -71,9 +71,8 @@ imageOrder: 2
 <div class="mt-6">
 
 - Aprender através da interação buscando atingir um objetivo.
-- Interações entre Agente (tomador de decisões) e o Ambiente.
-- Ambiente tem um espaço de ações, e um espaço de observação (estado).
-- On-policy, Off-policy
+- Interações entre Agente e o Ambiente.
+  - Espaço de ações, e espaço de observação (estado).
 - Q-learning
 </div>
 
@@ -122,13 +121,11 @@ $$ \begin{array}{c} \underbrace{Q(s,a)}_{\scriptstyle\text{Novo valor}}=\underbr
 
 ## <span class="text-2xl">Gambim (2021). _Aprendizado por Reforço em Jogos de Estratégia_</span>
 
-<div class="grid grid-cols-5 gap-x-5 px-5 pt-5">
+<div class="grid grid-cols-5 gap-x-5 px-5 pt-5 items-center">
 <div class="col-span-3">
 
-- Desenvolvimento de um agente por aprendizado por reforço para o jogo para o jogo de estratégia Battle for Wesnoth.
-- Desenvolvimento de um ambiente para o jogo em OpenAI Gym.
-- Espaço de ações discreto, espaço de observação contínuo.
-- Implementação em Deep Q-learning.
+- Agente por aprendizado por reforço para o jogo para o jogo de estratégia Battle for Wesnoth.
+- Deep Q-learning.
 
 </div>
 <div class="col-span-2">
@@ -150,9 +147,8 @@ $$ \begin{array}{c} \underbrace{Q(s,a)}_{\scriptstyle\text{Novo valor}}=\underbr
 <div class="grid grid-cols-5 gap-x-5 px-5 pt-5">
 <div class="col-span-3">
 
-- Desenvolvimento de um deep learning framework capaz de resolver problemas de locomoção parcialmente observáveis. Baseado em Recurrent Deterministic Policy Gradient (RDPG).
-- Algumas melhorias: (i) tail-step boostrap da diferença temporal, injeção de experiências externas de outros agentes, entre outros.
-- Utilização do ambiente Bipedal Walker do OpenAI Gym no modo Hardcore.
+- Deep Learning Framework capaz de resolver problemas de locomoção parcialmente observáveis. 
+- Baseado em Recurrent Deterministic Policy Gradient (RDPG).
 
 </div>
 <div class="col-span-2">
@@ -175,9 +171,8 @@ $$ \begin{array}{c} \underbrace{Q(s,a)}_{\scriptstyle\text{Novo valor}}=\underbr
 <div class="grid grid-cols-5 gap-x-5">
 <div class="col-span-3 pt-5">
 
-- Desenvolvimento de um algoritmo híbrido de DDPG e PPO para resolver o problema BipedalWalker Hardcore.
-- Um algoritmo off-policy (DDPG) e um on-policy (PPO) trabalhando juntos.
-- Trazendo a eficiência de dados off-policy e usando o gradiente de alta variância de on-policy.
+- Algoritmo híbrido de DDPG e PPO.
+- Off-policy (DDPG) e On-policy (PPO) trabalhando juntos.
 
 </div>
 <div class="col-span-2">
@@ -199,7 +194,7 @@ $$ \begin{array}{c} \underbrace{Q(s,a)}_{\scriptstyle\text{Novo valor}}=\underbr
 
 <div class="mt-4">
 
-- Biblioteca contendo uma diversa coleção de diferentes ambientes para aprendizado por reforço.
+- Biblioteca ambientes para aprendizado por reforço.
 </div>
  
 <br>
@@ -232,13 +227,12 @@ imageOrder: 2
 # Metodologia
 
 ## Bipedal Walker
-<div class="mt-4">
+<div class="mt-8">
 
-- Ambiente com um robô com 4 juntas que caminha num terreno levemente desigual.
-- Para resolução é necessário 300 pontos em 1600 passos de tempo.
-- Recompensas são obtidas por se mover para frente, totalizando 300 pontos ao final. 
-  - Se o robô cair, -100 pontos. 
-  - Aplicar torque ao motor custa uma pequena quantia de pontos.
+- Robô com 4 juntas que caminha num terreno levemente desigual.
+- Objetivo de 300 pontos em 1600 passos.
+  - Queda -> -100 pontos. 
+  - Toque ao motor -> custa uma pequena quantia de pontos.
 </div>
 
 <BarBottom  title="INF5021 - Matheus Madeira">
@@ -253,9 +247,7 @@ imageOrder: 2
 
 ## Bipedal Walker
 
-### Estado consiste de (i) velocidade do ângulo do casco, (ii) velocidade angular, (iii) velocidade horizontal, (iv) velocidade vertical, (v) posição das juntas, sua velocidade angular e se a perna está em contato com o chão, e (vii) 10 medições de telêmetro.
-
-<div class="mt-4">
+<div class="mt-12">
 
 | Espaço de ação  | Box(-1.0, 1.0, (4,), float32) |
 |---|--|
@@ -280,12 +272,12 @@ imageOrder: 2
 
 # Metodologia
 
-## Solução 1
+### Solução 1
 
-- Discretização do espaço de observação e do espaço de ação do ambiente.
-- Divisão de variáveis do espaço de ação em intervalos de 0.2 (10 partes).
-- Divisão de variáveis contínuas do espaço de observação em intervalos de 0.7 (10 partes).
-- Variáveis de observação utilizadas: velocidade do ângulo do casco, pernas estão em contato com o chão, posição das juntas.
+- Discretização do espaço de observação e do espaço de ação.
+- Divisão de ações em intervalos de 0.2 (10 partes).
+- Divisão de variáveis de observação em intervalos de 0.7 (10 partes).
+- Observação: velocidade angular do casco, contato de pernas com chão, posição das juntas.
 
 </div>
 
@@ -299,14 +291,13 @@ imageOrder: 2
 
 # Metodologia
 
-## Solução 1
+### Solução 1
+
+<br>
 
 - Não foi possível adicionar mais variáveis de observação devido a memória e tempo de execução
 - Etapas:
-  - Implementação do Agente
-    - α = 0.7
-    - γ = 0.618
-    - ε descrescente, decaimento de 1% por episódio, valor mínimo: 0.01
+  - Implementação do Agente (α = 0.7, γ = 0.618, ε descrescente (mínimo: 0.01))
   - Treinamento
   - Comparação
   
@@ -397,11 +388,12 @@ position: center
 
 <br>
 
-- Foi possível obter um maior aprofundamento na área de IA, desenvolvendo habilidades práticas tanto com ferramentas bem utilizadas na área, quanto com a formulação de soluções.
-- O resultado do trabalho consegue trazer uma contribuição como mais uma referência de desenvolvimento para a classe de problemas escolhido.
+- Maior aprofundamento na área de IA.
+  - Desenvolvimento de habilidades práticas com ferramentas e formulação de soluções.
+- Trabalho traz a contribuição de ser mais uma referência de desenvolvimento para a classe de problemas.
 - Melhorias futuras:
-  - Mais implementações para comparação (TP3, PPO, etc)
-  - Implementação para ambientes mais complexos
+  - Mais implementações para comparação (TP3, PPO, etc).
+  - Implementação para ambientes mais complexos (Hardcore).
 
 <BarBottom  title="INF5021 - Matheus Madeira">
   <Item text="">
