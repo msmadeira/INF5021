@@ -7,7 +7,7 @@ Has do add `export PATH="/opt/homebrew/opt/swig@3/bin:$PATH"` to `.zshrc`, which
 
 ## TODO
 - [ ] deixar mais suscinto o texto;
-- [ ] númerar slides;
+- [X] númerar slides;
 - [ ] Fundamentação teórica antes dos trabalhos relacionados;
 - [ ] Relacionar MuJoCo;
 - [ ] Melhorar a explicação de DDPG;
@@ -16,4 +16,5 @@ Has do add `export PATH="/opt/homebrew/opt/swig@3/bin:$PATH"` to `.zshrc`, which
 - [ ] Resolver comentários marcados como 'XXXXX'
 - [ ] Atualizar imagem de resultados DDPG
 - [ ] Gravar vídeo para demo
+- [ ] Prepare presentation notes
 - [ ] Extra - tirar mensagem de "em construção da raíz" de mathsmadeira.com

@@ -8,8 +8,8 @@ colorSchema: 'light'
 INF5021 - Matheus Madeira
 
 <BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="msmadeira/INF5021">
-    <carbon:logo-github />
+  <Item text="">
+    <SlideCurrentNo />
   </Item>
 </BarBottom>
 
@@ -25,8 +25,8 @@ image: './img/slide2.gif'
 - Agente de aprendizado de reforço para um ambiente de simulação física em 2D (<span class="text-sm">Python, Gymnasium</span>).
 
 <BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="msmadeira/INF5021">
-    <carbon:logo-github />
+  <Item text="">
+    <SlideCurrentNo />
   </Item>
 </BarBottom>
 ---
@@ -53,8 +53,8 @@ image: './img/slide2.gif'
 </div>
 
 <BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="msmadeira/INF5021">
-    <carbon:logo-github />
+  <Item text="">
+    <SlideCurrentNo />
   </Item>
 </BarBottom>
 
@@ -79,8 +79,8 @@ image: './img/slide2.gif'
 </div>
 
 <BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="msmadeira/INF5021">
-    <carbon:logo-github />
+  <Item text="">
+    <SlideCurrentNo />
   </Item>
 </BarBottom>
 ---
@@ -103,8 +103,8 @@ image: './img/slide2.gif'
 </div>
 
 <BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="msmadeira/INF5021">
-    <carbon:logo-github />
+  <Item text="">
+    <SlideCurrentNo />
   </Item>
 </BarBottom>
 ---
@@ -127,8 +127,8 @@ image: './img/slide2.gif'
 </div>
 
 <BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="msmadeira/INF5021">
-    <carbon:logo-github />
+  <Item text="">
+    <SlideCurrentNo />
   </Item>
 </BarBottom>
 
@@ -152,8 +152,8 @@ imageOrder: 2
 </div>
 
 <BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="msmadeira/INF5021">
-    <carbon:logo-github />
+  <Item text="">
+    <SlideCurrentNo />
   </Item>
 </BarBottom>
 
@@ -166,8 +166,8 @@ imageOrder: 2
 $$ \begin{array}{c} \underbrace{Q(s,a)}_{\scriptstyle\text{Novo valor}}=\underbrace{Q(s,a)}_{\scriptstyle\text{Valor antigo}}+\mkern-34mu\underset{\text{Taxa de aprendizado}}{\underset{\Bigl|}{\alpha}}\mkern-30mu[\underbrace{R(s,a)}_{\scriptstyle\text{Recompensa}}+\mkern-30mu\underset{\text{Taxa de desconto}}{\underset{\Biggl|}{\gamma}}\mkern-75mu\overbrace{\max Q'(s',a')}^{\scriptstyle\substack{\text{Valor máximo esperado, dado o novo} \\ \text{estado e todas suas possíveis ações}}}\mkern-45mu-Q(s,a)]\end{array} $$
 
 <BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="msmadeira/INF5021">
-    <carbon:logo-github />
+  <Item text="">
+    <SlideCurrentNo />
   </Item>
 </BarBottom>
 
@@ -185,8 +185,8 @@ $$ \begin{array}{c} \underbrace{Q(s,a)}_{\scriptstyle\text{Novo valor}}=\underbr
 </div>
 
 <BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="msmadeira/INF5021">
-    <carbon:logo-github />
+  <Item text="">
+    <SlideCurrentNo />
   </Item>
 </BarBottom>
 
@@ -217,8 +217,8 @@ env.close()
 ```
 
 <BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="msmadeira/INF5021">
-    <carbon:logo-github />
+  <Item text="">
+    <SlideCurrentNo />
   </Item>
 </BarBottom>
 
@@ -241,8 +241,8 @@ imageOrder: 2
 </div>
 
 <BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="msmadeira/INF5021">
-    <carbon:logo-github />
+  <Item text="">
+    <SlideCurrentNo />
   </Item>
 </BarBottom>
 
@@ -264,8 +264,8 @@ imageOrder: 2
 </div>
 
 <BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="msmadeira/INF5021">
-    <carbon:logo-github />
+  <Item text="">
+    <SlideCurrentNo />
   </Item>
 </BarBottom>
 
@@ -289,8 +289,8 @@ imageOrder: 2
 </div>
 
 <BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="msmadeira/INF5021">
-    <carbon:logo-github />
+  <Item text="">
+    <SlideCurrentNo />
   </Item>
 </BarBottom>
 
@@ -311,8 +311,8 @@ imageOrder: 2
   
 
 <BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="msmadeira/INF5021">
-    <carbon:logo-github />
+  <Item text="">
+    <SlideCurrentNo />
   </Item>
 </BarBottom>
 
@@ -332,8 +332,8 @@ imageOrder: 2
 </div>
 
 <BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="msmadeira/INF5021">
-    <carbon:logo-github />
+  <Item text="">
+    <SlideCurrentNo />
   </Item>
 </BarBottom>
 
@@ -351,8 +351,8 @@ imageOrder: 2
 
 
 <BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="msmadeira/INF5021">
-    <carbon:logo-github />
+  <Item text="">
+    <SlideCurrentNo />
   </Item>
 </BarBottom>
 
@@ -372,8 +372,8 @@ imageOrder: 2
 </div>
 
 <BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="msmadeira/INF5021">
-    <carbon:logo-github />
+  <Item text="">
+    <SlideCurrentNo />
   </Item>
 </BarBottom>
 
@@ -385,8 +385,8 @@ position: center
 # DEMO
 
 <BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="msmadeira/INF5021">
-    <carbon:logo-github />
+  <Item text="">
+    <SlideCurrentNo />
   </Item>
 </BarBottom>
 
@@ -403,8 +403,8 @@ position: center
   - Implementação para ambientes mais complexos
 
 <BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="msmadeira/INF5021">
-    <carbon:logo-github />
+  <Item text="">
+    <SlideCurrentNo />
   </Item>
 </BarBottom>
 
@@ -421,8 +421,8 @@ position: center
 
 
 <BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="msmadeira/INF5021">
-    <carbon:logo-github />
+  <Item text="">
+    <SlideCurrentNo />
   </Item>
 </BarBottom>
 
@@ -434,8 +434,8 @@ position: center
 - Lillicrap, T.P. & Hunt, J.J. & Pritzel, A. & Heess, N. & Erez, T. & Tassa, Y. & Silver, D. & Wierstra, D. (2015). _Continuous control with deep reinforcement learning._ <br> <span style="color: rgb(76, 29, 149, 0.4)">International Conference on Learning Representations.</span>
 
 <BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="msmadeira/INF5021">
-    <carbon:logo-github />
+  <Item text="">
+    <SlideCurrentNo />
   </Item>
 </BarBottom>
 
@@ -450,7 +450,7 @@ class: "text-center"
 ## <span class="text-2xl">GitHub Repo: [https://github.com/msmadeira/INF5021](https://github.com/msmadeira/INF5021)</span>
 
 <BarBottom  title="INF5021 - Matheus Madeira">
-  <Item text="msmadeira/INF5021">
-    <carbon:logo-github />
+  <Item text="">
+    <SlideCurrentNo />
   </Item>
 </BarBottom>
