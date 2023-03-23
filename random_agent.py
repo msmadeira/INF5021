@@ -16,7 +16,7 @@ min_epsilon = 0.01
 decay = 0.01
 
 # training variables
-num_training_episodes = 100
+num_training_episodes = 5000
 
 env = gym.make("BipedalWalker-v3")
 
@@ -55,7 +55,7 @@ if debug:
     # Visualizing results and total reward over all episodes
     x = range(num_training_episodes)
     plt.plot(x, training_rewards)
-    plt.xlabel('Episode')
-    plt.ylabel('Training total reward')
-    plt.title('Total rewards over all episodes in training')
+    plt.xlabel('Episódio')
+    plt.ylabel('Recompensa total de treinamento')
+    plt.title('Recompensa total em todos episódios de treinamento')
     plt.show()

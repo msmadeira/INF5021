@@ -19,7 +19,7 @@ greater_value_action = []
 greater_value = 0
 
 # training variables
-num_training_episodes = 500
+num_training_episodes = 5000
 
 env = gym.make("BipedalWalker-v3")
 
@@ -50,7 +50,7 @@ def get_random_action():
 
 
 # discretization: action space
-action_space = np.around(np.arange(start=env.action_space.low[0], stop=env.action_space.high[0], step=0.1), 1)
+action_space = np.around(np.arange(start=env.action_space.low[0], stop=env.action_space.high[0], step=0.2), 1)
 action_space_dictionary = {}
 for i in range(action_space.size):
     key1 = str(action_space[i])
@@ -70,7 +70,7 @@ hull_angle_speed_parameters = []
 for i in range(number_of_observation_parameters):
     low = env.observation_space.low[i]
     high = env.observation_space.high[i]
-    hull_angle_speed_parameters = np.around(np.arange(start=low, stop=high, step=0.1), 2)
+    hull_angle_speed_parameters = np.around(np.arange(start=low, stop=high, step=0.2), 2)
 
 
 # initialize Q-table
@@ -90,13 +90,14 @@ for episode in range(num_training_episodes):
     total_training_rewards = 0
 
     while True:
+        q_state_representation = find_closest(hull_angle_speed_parameters, state[0])
         # choose action given the states based on a random number
         exp_exp_tradeoff = random.uniform(0, 1)
 
         # if rng larger than epsilon: exploitation
         if exp_exp_tradeoff > epsilon:
             # get action in dictionary with the highest reward and parse it
-            action = greater_value_action
+            action = parse_action(get_action_with_highest_reward_from_state(q_state_representation))
         # else exploration
         else:
             action = get_random_action()
@@ -104,12 +105,11 @@ for episode in range(num_training_episodes):
         # perform action and get reward and next state
         new_state, reward, done, truncated, info = env.step(action)
 
-        q_state_representation = find_closest(hull_angle_speed_parameters, state[0])
         q_new_state_representation = find_closest(hull_angle_speed_parameters, new_state[0])
         highest_value_new_state = Q[q_new_state_representation][get_action_with_highest_reward_from_state(q_new_state_representation)]
         stringified_action = stringify_action(action)
 
-        q_state_new_value = Q[q_state_representation][stringified_action] + alpha * (float(reward) + discount_factor - highest_value_new_state - Q[q_state_representation][stringified_action])
+        q_state_new_value = Q[q_state_representation][stringified_action] + alpha * (float(reward) + discount_factor * highest_value_new_state - Q[q_state_representation][stringified_action])
 
         if q_state_new_value > greater_value:
             greater_value = q_state_new_value
@@ -137,7 +137,7 @@ if debug:
     # Visualizing results and total reward over all episodes
     x = range(num_training_episodes)
     plt.plot(x, training_rewards)
-    plt.xlabel('Episode')
-    plt.ylabel('Training total reward')
-    plt.title('Total rewards over all episodes in training')
+    plt.xlabel('Episódio')
+    plt.ylabel('Recompensa total de treinamento')
+    plt.title('Recompensa total em todos episódios de treinamento')
     plt.show()
