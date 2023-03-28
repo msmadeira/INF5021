@@ -11,7 +11,7 @@ Python 3.6 is required.
 Run `pip install -r requirements.txt` inside `ddpg` folder.
 
 ## TODO 
-- [ ] Reread taking notes for presentation: chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://ijisrt.com/assets/upload/files/IJISRT21NOV126.pdf
+- [ ] Update conclusion
 - [ ] Resolver comentários marcados como 'XXXXX'
 - [ ] Atualizar imagem de resultados DDPG
 - [ ] Gravar vídeo para demo

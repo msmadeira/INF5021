@@ -17,6 +17,9 @@ Original paper: https://arxiv.org/abs/1509.02971
 Not the author's implementation !
 '''
 
+def episode_trigger(x):
+    return x > 1000
+
 parser = argparse.ArgumentParser()
 parser.add_argument('--mode', default='train', type=str) # mode = 'train' or 'test'
 parser.add_argument("--env_name", default="BipedalWalker-v3")
@@ -46,6 +49,7 @@ args = parser.parse_args()
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 script_name = os.path.basename(__file__)
 env = gym.make(args.env_name)
+env = gym.wrappers.RecordVideo(env, 'videos', episode_trigger=episode_trigger)
 
 if args.seed:
     env.seed(args.random_seed)

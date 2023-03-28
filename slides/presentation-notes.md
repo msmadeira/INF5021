@@ -153,3 +153,16 @@ hidden state initialization via trajectory scanning
 experience injection for behaviour transfer
 um agente treinado teacher, um agente aluno. experiencia é enviada na forma de trajetorias de state-action-reward pairs.
 injetando trajetorias no replay buffer de um novo agente.
+
+# Environment Interaction of Bipedal Robot using Model-free COntrol Framework Hybrid Off-policy and On-policy Reinforcemente Learning ALgorithm notes
+
+Combination of DDPG and PPO,
+DDPG tem problema de usar dados antigos, que podem ser diferentes da nova policy para a funçãp reward
+uso de PPO para estabilidade
+
+They use off-policy learning to learn from past experience and on-policy learning to improve the robot's current performance. The algorithm is based on a combination of a deep deterministic policy gradient algorithm and a PPO.
+
+to learn from past experience and improve the policy in the long-term
+
+PPO works by updating the policy parameters in small steps at each iteration, where the step size is controlled by a hyperparameter called the clipping parameter. The key idea behind PPO is to impose a constraint on the update step to ensure that the new policy is not too different from the previous policy. This constraint helps to prevent the policy from changing too rapidly, which can lead to instability and poor performance.
+Overall, PPO is a powerful algorithm for reinforcement learning that balances the exploration-exploitation tradeoff by dynamically adjusting the step size of the policy update. 
