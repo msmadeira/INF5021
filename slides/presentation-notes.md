@@ -135,4 +135,21 @@ In DQN-based algorithms, the target network is just copied over from the main ne
 
 where \rho is a hyperparameter between 0 and 1 (usually close to 1). (This hyperparameter is called polyak in our code).
 
+the weights of the target q network is updated by slowly tracking the learned networks via soft updates
+
 Ornstein–Uhlenbeck
+
+# Recurrent Deterministic Policy Gradient Method for Bipedal Locomotion on Rough Terrain Challenge notes
+RDPG
+como robos nao tem uma observacao completa na vida real e muitas das leituras podem ter bastante distorcao, o algoritmo busca resolver problemas de aprendizado com observacao incompleta
+se usa o estado do passado para complementar as informacoes do estado atual.
+uso de memória temporal para ter conhecidomento dos estados passados (Long Short Term Memory LSTM)
+RDPG é uma aplicação de DPG
+Critic aproxima o valor state-action e manda o valor para o Actor em uma fase de policy improvement na forma de action gradient 
+TD gradient do minibatch do replay buffer, critic atualizado minimizando TD loss, depois pegado o actor gradient to minibatch e atualizado o ator
+
+hidden state initialization via trajectory scanning
+
+experience injection for behaviour transfer
+um agente treinado teacher, um agente aluno. experiencia é enviada na forma de trajetorias de state-action-reward pairs.
+injetando trajetorias no replay buffer de um novo agente.

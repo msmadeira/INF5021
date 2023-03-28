@@ -1,28 +1,24 @@
 import argparse
 from itertools import count
 
-import os, sys, random
+import os
 import numpy as np
 
-import gym
+import gymnasium as gym
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
-from torch.distributions import Normal
 from tensorboardX import SummaryWriter
 
 '''
 Implementation of Deep Deterministic Policy Gradients (DDPG) with pytorch 
-riginal paper: https://arxiv.org/abs/1509.02971
+Original paper: https://arxiv.org/abs/1509.02971
 Not the author's implementation !
 '''
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--mode', default='train', type=str) # mode = 'train' or 'test'
-# OpenAI gym environment name, # ['BipedalWalker-v2', 'Pendulum-v0'] or any continuous environment
-# Note that DDPG is feasible about hyper-parameters.
-# You should fine-tuning if you change to another environment.
 parser.add_argument("--env_name", default="BipedalWalker-v3")
 parser.add_argument('--tau',  default=0.005, type=float) # target smoothing coefficient
 parser.add_argument('--target_update_interval', default=1, type=int)
@@ -215,13 +211,13 @@ def main():
     if args.mode == 'test':
         agent.load()
         for i in range(args.test_iteration):
-            state = env.reset()
+            state, _ = env.reset()
             for t in count():
                 action = agent.select_action(state)
-                next_state, reward, done, info = env.step(np.float32(action))
+                next_state, reward, done, truncated, info = env.step(np.float32(action))
                 ep_r += reward
                 env.render()
-                if done or t >= args.max_length_of_trajectory:
+                if done or truncated or t >= args.max_length_of_trajectory:
                     print("Ep_i \t{}, the ep_r is \t{:0.2f}, the step is \t{}".format(i, ep_r, t))
                     ep_r = 0
                     break
@@ -233,25 +229,24 @@ def main():
         for i in range(args.max_episode):
             total_reward = 0
             step =0
-            state = env.reset()
+            state, _ = env.reset()
             for t in count():
                 action = agent.select_action(state)
                 action = (action + np.random.normal(0, args.exploration_noise, size=env.action_space.shape[0])).clip(
                     env.action_space.low, env.action_space.high)
 
-                next_state, reward, done, info = env.step(action)
+                next_state, reward, done, truncated, info = env.step(action)
                 if args.render and i >= args.render_interval : env.render()
                 agent.replay_buffer.push((state, next_state, action, reward, np.float(done)))
 
                 state = next_state
-                if done:
+                if done or truncated:
                     break
                 step += 1
                 total_reward += reward
             total_step += step+1
             print("Total T:{} Episode: \t{} Total Reward: \t{:0.2f}".format(total_step, i, total_reward))
             agent.update()
-           # "Total T: %d Episode Num: %d Episode T: %d Reward: %f
 
             if i % args.log_interval == 0:
                 agent.save()

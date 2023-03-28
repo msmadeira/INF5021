@@ -22,7 +22,7 @@ decay = 0.0007
 num_training_episodes = 10000
 
 env = gym.make("BipedalWalker-v3", render_mode="rgb_array")
-env = gym.wrappers.RecordVideo(env, 'videos', episode_trigger=lambda x: x > 9500 and x % 2 == 0)
+env = gym.wrappers.RecordVideo(env, 'videos', episode_trigger=lambda x: x > 5000 and x % 2 == 0, disable_logger=True)
 
 # create lists to keep track of reward and epsilon
 training_rewards = []
