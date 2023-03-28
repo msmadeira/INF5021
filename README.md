@@ -11,12 +11,6 @@ Python 3.6 is required.
 Run `pip install -r requirements.txt` inside `ddpg` folder.
 
 ## TODO
-- [X] deixar mais suscinto o texto;
-- [X] númerar slides;
-- [X] Fundamentação teórica antes dos trabalhos relacionados;
-- [X] Relacionar MuJoCo;
-- [X] Informações divulgação
-- [X] Melhorar a explicação de DDPG;
 - [ ] Reread taking notes for presentation: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8581309 
 - [ ] Reread taking notes for presentation: chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://ijisrt.com/assets/upload/files/IJISRT21NOV126.pdf
 - [ ] Read taking notes: https://spinningup.openai.com/en/latest/algorithms/ddpg.html#pseudocode
@@ -25,8 +19,4 @@ Run `pip install -r requirements.txt` inside `ddpg` folder.
 - [ ] Gravar vídeo para demo
 - [ ] Prepare presentation notes
 - [ ] Upload final presentation to website
-- [ ] Add https://www.youtube.com/watch?v=jDll4JSI-xo&t=822s to references
-- [ ] Extra - tirar mensagem de "em construção da raíz" de mathsmadeira.com
-
-
-deterministic -> policy manda a action ao invés de stochastic que manda uma probabilidade de cada ação.
+- [ ] Extra: tirar mensagem de "em construção da raíz" de mathsmadeira.com

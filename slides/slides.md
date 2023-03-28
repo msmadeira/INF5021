@@ -442,6 +442,7 @@ position: center
 
 - Mishra, P.K. & Prakash, P. (2021). _Environment Interaction of a Bipedal Robot  using Model-Free Control Framework Hybrid  off-Policy and on-Policy Reinforcement  Learning Algorithm._ <br> <span style="color: rgb(76, 29, 149, 0.4)">International Journal of  Innovative Science and Research Technology.</span>
 - Lillicrap, T.P. & Hunt, J.J. & Pritzel, A. & Heess, N. & Erez, T. & Tassa, Y. & Silver, D. & Wierstra, D. (2015). _Continuous control with deep reinforcement learning._ <br> <span style="color: rgb(76, 29, 149, 0.4)">International Conference on Learning Representations.</span>
+- Tabor, P. (2019). _How to Implement Deep Learning Papers._ <br>
 
 <BarBottom  title="INF5021 - Matheus Madeira">
   <Item text="">

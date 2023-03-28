@@ -81,3 +81,58 @@ ESCREVER NOTAS COM BASE NO ARTIGO
 
 
 ## DDPG Notes
+
+Adaptacao das ideias de DeepQLearning para espacos de acao contínuos
+aprende uma q-function e uma policy,
+off-policy data e bellman equation pra aprender a q-function e usa a q-function pra aprender a policy.
+ao invés de usar um argmax  em cima de todas possiveis acoes no estado (impossivel em um espaco de acoes contínuo)
+tenta conseguir um approximator para a*(s)
+usa MSBE para aproximar a q-function
+para achar uma policy det4erministica, como o espaco de acao é continuo, podemos assumir que q-function é diferenciavel com respeito a acao
+entao apenas é performado um gradient ascent 
+
+actor-critic, model free, deterministic policy gradient
+Ideia de lidar com espaço de ações contínuos
+Não conseguimos lidar com espaços de ações contínuos em q-learning e deep-q learning
+discretizar o espaço de açõ3es faz com que tenhamos uma quantidade enorme de ações
+deterministic -> policy manda a action ao invés de stochastic que manda uma probabilidade de cada ação.
+
+treinada off-policy com samples de um replay buffer para minimizar correlacoes entre amostras
+batch normalization
+
+o comportamento de um agente é definido por uma política que mapeia estados para uma funcao de probabilidade de ações
+off-policy simplifica a equacao de bellman já que nao tem que calcular com base em uma expectativa de retorno da distribuicao probabilistica de acoes
+
+em DDPG:
+Um Ator especifica uma política de maneira deterministica, mapeando estados para uma ação específica
+O Critico usa a ação de bellman em cima do resultado do agente, o ator entao é atualizado encadeamento pelo crítico.
+
+aprender em mini-batches, não online.
+replay buffer é um cache.
+a cada tempo o ator e o critico sao atualizados sampleando um minibatch uniformemente do buffer.
+
+uma cópia do ator e critico (target actor and critic) para "soft" update os valores, fazendo com que os target values mudem devagar, aumentando a estavilidade
+usa os targets para ter targets estaveis e treinar o critico sem divergencia.
+target network delays the propagation of value estimations
+
+como os valores de observacao podem ser de tipos diferentes, tamanhos diferentes, eles sao normalizados com uma tecnica de 
+batch normalization, normaliza cada dimensao dos samples para ter uma media de unidade e variancia
+
+para explorar tem uma política diferente, que adiciona um noise a política do ator, de maneira que a ação é sampleada e adicionada
+um noise.
+
+
+
+Trick Two: Target Networks. Q-learning algorithms make use of target networks. The term
+
+r + \gamma (1 - d) \max_{a'} Q_{\phi}(s',a')
+
+is called the target, because when we minimize the MSBE loss, we are trying to make the Q-function be more like this target. Problematically, the target depends on the same parameters we are trying to train: \phi. This makes MSBE minimization unstable. The solution is to use a set of parameters which comes close to \phi, but with a time delay—that is to say, a second network, called the target network, which lags the first. The parameters of the target network are denoted \phi_{\text{targ}}.
+
+In DQN-based algorithms, the target network is just copied over from the main network every some-fixed-number of steps. In DDPG-style algorithms, the target network is updated once per main network update by polyak averaging:
+
+\phi_{\text{targ}} \leftarrow \rho \phi_{\text{targ}} + (1 - \rho) \phi,
+
+where \rho is a hyperparameter between 0 and 1 (usually close to 1). (This hyperparameter is called polyak in our code).
+
+Ornstein–Uhlenbeck
