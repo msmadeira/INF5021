@@ -3,7 +3,7 @@ theme: "purplin"
 colorSchema: 'light'
 ---
 
-# Aprendizado por Reforço em Simuladores de Física Bidimensionais
+# Aprendizado por Reforço em Simulação Física 2D
 
 INF5021 - Matheus Madeira
 
