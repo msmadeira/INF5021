@@ -77,3 +77,7 @@ ESCREVER NOTAS COM BASE NO ARTIGO
 - Melhorias futuras:
   - Mais implementações para comparação (TP3, PPO, etc)
   - Implementação para ambientes mais complexos
+
+
+
+## DDPG Notes
