@@ -14,6 +14,7 @@ Had to add `export PATH="/opt/homebrew/opt/swig@3/bin:$PATH"` to `.zshrc`.
 - [X] Melhorar a explicação de DDPG;
 - [ ] Reread taking notes for presentation: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8581309 
 - [ ] Reread taking notes for presentation: chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://ijisrt.com/assets/upload/files/IJISRT21NOV126.pdf
+- [ ] Read taking notes: https://spinningup.openai.com/en/latest/algorithms/ddpg.html#pseudocode
 - [ ] Resolver comentários marcados como 'XXXXX'
 - [ ] Atualizar imagem de resultados DDPG
 - [ ] Gravar vídeo para demo

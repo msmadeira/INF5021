@@ -101,7 +101,23 @@ $$ \begin{array}{c} \underbrace{Q(s,a)}_{\scriptstyle\text{Novo valor}}=\underbr
 # Fundamentação Teórica
 
 ## DDPG
-- Model-free learning
+- Deep Deterministic Policy Gradients
+- Aprende uma Q-function e uma Policy
+- Usado para espaços de ação e observação contínuos
+- Actor, Critic, Target Actor, Target Critic
+
+
+<BarBottom  title="INF5021 - Matheus Madeira">
+  <Item text="">
+    <SlideCurrentNo />
+  </Item>
+</BarBottom>
+
+---
+
+# Fundamentação Teórica
+
+## DDPG
 
 <div class="flex flex-col">
   <div class="mx-auto">
