@@ -11,9 +11,6 @@ Python 3.6 is required.
 Run `pip install -r requirements.txt` inside `ddpg` folder.
 
 ## TODO 
-- [ ] Resolver comentários marcados como 'XXXXX'
-- [ ] Atualizar imagem de resultados DDPG
-- [ ] Gravar vídeo para demo
 - [ ] Upload final presentation to website
 - [ ] Treinar e diminuir tempo de apresentação
 - [ ] Extra: tirar mensagem de "em construção da raíz" de mathsmadeira.com

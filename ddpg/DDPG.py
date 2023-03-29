@@ -260,6 +260,7 @@ if __name__ == '__main__':
     main()
 
 
+print("Training score over time: " + str(sum(training_rewards) / args.max_episode))
 # Visualizing results and total reward over all episodes
 x = range(args.max_episode)
 plt.plot(x, training_rewards)

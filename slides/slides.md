@@ -373,7 +373,7 @@ imageOrder: 2
 <div class="grid grid-cols-2 gap-x-5 px-5">
 <div class="flex flex-col">
   <img src="/img/resultado-solucao-2.png" class="max-w-full"/>
-  <span class="mx-auto mt-3 text-center">Agente DDPG - Recompensa média XXXXX</span>
+  <span class="mx-auto mt-3 text-center">Agente DDPG - Recompensa média 124.99</span>
 </div>
 <div class="flex flex-col">
   <img src="/img/resultado-solucao-1.jpg" class="max-w-full"/>
@@ -388,11 +388,30 @@ imageOrder: 2
 </BarBottom>
 
 ---
-layout: quote
-position: center
+
+# Q-learning
+
+<div class="flex flex-col mt-6">
+  <video class="mx-auto" controls width="600">
+    <source src="/videos/q-learning.mp4" type="video/mp4">
+  </video>
+</div>
+
+<BarBottom  title="INF5021 - Matheus Madeira">
+  <Item text="">
+    <SlideCurrentNo />
+  </Item>
+</BarBottom>
+
 ---
 
-# DEMO
+# DDPG
+
+<div class="flex flex-col mt-6">
+  <video class="mx-auto" controls width="600">
+    <source src="/videos/ddpg.mp4" type="video/mp4">
+  </video>
+</div>
 
 <BarBottom  title="INF5021 - Matheus Madeira">
   <Item text="">
