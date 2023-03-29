@@ -1,168 +1,149 @@
 # Notes
 
-Informações extras para cada Ponto
+## Capa
 
-## Slide Introdução
+Boa tarde, meu nome é Matheus Madeira e o meu trabalho é: "Aprendizado por reforço em simulação física 2D".
 
-- Simulação física é uma área de extrema relevância para a computação, porém são problemas de grande complexidade.
-- Isso tanto para estudar características físicas, quanto para resolver problemas do mundo real.
-  - Mas uma simulação física, geralmente necessita de muitas variáveis devida a alta complexidade desses problemas no nosso cotidiano. Uma alternativa para diminuir a complexidade desses problemas e ainda assim conseguir os estudar é ir para o mundo 2D.
-- Esse trabalho busca servir como mais uma referência de como podemos usar inteligência artificial, mais especificamente, para resolver essa classe de problemas.
+## Introdução
 
-# Slide Fundamentação Teórica I
+- Simulação física é uma área de extrema relevância para a computação, tanto para estudar características físicas, quanto para resolver problemas do mundo real.
+  - Mas uma simulação física, geralmente necessita de muitas variáveis devida a alta complexidade desses problemas. 
+  - Uma alternativa para diminuir a complexidade desses problemas e ainda assim conseguir os estudar é ir para o mundo 2D.
+- Esse trabalho busca servir como mais uma referência de aplicação de IA.
+- Implementando um Agente de aprendizado por reforço para um ambiente de simulação física em 2D (<span class="text-sm">Python, Gymnasium</span>).
 
-- Problemas de aprendizado por reforço envolvem entender o que fazer, como mapear situações a ações, de maneira a maximizar uma recompensa. 
-  - Onde a agente não é ensinado que ações tomar, ele deve descobrir qual a maior recompensa tentando, as suas ações influenciam seus resultados futuros. 
-  - Notadamente, esse agente deve ser capaz de compreender o estado do ambiente e ser capaz de tomar decisões que afetem esse estado.
-  - Uma distinção clara de outro método, como por exemplo aprendizado supervisionado, é que esse aprende por um conjunto de exemplos organizados por um supervisor externo.
-  - Já aprendizado por reforço um agente deve aprender a partir de sua própria experiência.
-- Dito isso, aprendizado por reforço é composto por interações entre um agente e o ambiente, que é o mundo que o agente vive e interage.
+## Objetivos
+
+LER SLIDE
+
+## Fundamentação Teórica I
+
+- Problemas de aprendizado por reforço envolvem entender como mapear situações a ações, de maneira a maximizar uma recompensa. 
+  - Onde o agente não é ensinado que ações tomar, ele deve descobrir qual a maior recompensa tentando. 
+  - Notadamente, esse agente deve conseguir compreender o estado do ambiente e conseguir tomar decisões que afetem esse estado.
+  - Uma distinção clara de outro método, como, por exemplo, aprendizado supervisionado, é que esse aprende por um conjunto de exemplos organizados por um supervisor externo.
+  - Já aprendizado por reforço um agente deve aprender a partir da sua própria experiência.
+- Dito isso, aprendizado por reforço é composto por interações entre um agente e o ambiente, o mundo que o agente vive e interage.
+- Esse ambiente tem um espaço de ações possíveis e um espaço de observação (estado)
 - Existem diversos algoritmos diferentes para reinforcement learning, sendo divididos entre off-policy e on-policy.
   - On-policy o agente escolhendo as ações de acordo com uma policy,
   - Off-policy o agente não escolhendo as ações, aprendendo por exploração.
-- A nossa tecnica escolhida então se centra em On-policy learning, que é Q-Learning
-- O modelo trabalha com uma tabela Q, que contém um valor aproximado da função para cada estado. 
-  - Essa tabela começa zerada.
-  - Começa então o processo de aprendizado, podendo ser feito exploração, ou escolhendo a opção com maior recompensa.
+- Especificamente sobre Q-learning, algoritmo off-policy
+- O modelo trabalha com uma tabela Q, que contém um valor aproximado da função para cada estado.
+  - Essa tabela começa zerada. Durante o processo de aprendizado é preenchida.
+  - Esse processo de aprendizado ocorre explorando em alguns momentos e tomando a ação de maior valor em outras vezes.
   - Quando o agente escolhe uma ação e muda para outro estado o seu valor recompensa será recalculado, normalmente pela Equação de Bellman.
 
-# Slide Fundamentação Teórica II
+## Fundamentação Teórica II
 
 - Recapitulando então
 
-# Slide Trabalhos Relacionados I
+## Fundamentação Teórica III
+
+- DDPG
+- Deep Deterministic Policy Gradients, basicamente uma adaptação das ideias de Deep Q-learning (Q-learning para espaços de observação contínuos) e DPG.
+- Usado para espaços de ação e observação contínuos.
+- O que essa mistura nos diz? nos diz que o algoritmo aprende uma Q-function e uma Policy em simultâneo.
+- Isso acontece se treinando uma rede neural para aprender uma q-function e usando a q-function para aprender uma policy, essa policy tentando ser algo que aproxime 
+  - a melhor ação dado um estado, já que não podemos só iterar sobre uma lista por ser contínuo.
+  - Para obter essa melhor ação, os autores assumem que a q-function é diferenciavel em relação à ação. Então realizam um gradient ascent.
+- Para realizar isso que descrevi aqui, o algoritmo usa então uma estrutura de 4 redes neurais, uma Actor, uma critic e duas target.
+  - Um Ator especifica uma política de maneira deterministica, mapeando estados para uma ação específica
+  - O Crítico avalia a política do agente com uma equação, o ator entao é atualizado em encadeamento pelo crítico.
+  - Como nós estamos tentando minimizar o erro, fazemos uma comparação do valor esperado com o valor obtido.
+    - Para isso temos uma cópia do ator e critico (target actor and critic), atualizados de maneira mais suave, fazendo com que os target values mudem devagar
+    - aumentando a estabilidade, feito para treinar o crítico sem divergencia.
+
+## Fundamentação Teórica IV
+
+- Aqui temos uma representação um pouco mais gráfica do Algoritmo.
+- Então temos um Agente interagindo com um estado: EXPLICAR
+- Aqui se pode observar o uso de uma ténica interessante de Replay Buffer, basicamente, DDPG não aprende ‘online’, ele aprende em batches
+  - Se as redes fossem atualizadas a cada passo, teríamos informações com muita relação entre elas, não sendo ótimo para treinamento.
+  - Então se pega ‘samples’ de uma memória e atualiza tudo em simultâneo.
+
+## Slide Trabalhos Relacionados I
 
 - De trabalhos relacionados temos o trabalho do Tiago Reck Gambim, Aprendizado por Reforço em jogos de estratégia.
-  TCC de Engenharia de Computação na PUCRS. Que basicamente foca em desenvolver um ambiente, e um agente para o jogo Battle for Wesnoth, um jogo
-  de estratégia em turnos em um mapa hexagonal. Esse trabalho se relaciona bem pelo fato de usar as mesmas ferramentas, referências e abordagem.
+  Um TCC de Engenharia de Computação na PUCRS. Que basicamente foca em desenvolver um ambiente, e um agente para o jogo Battle for Wesnoth, um jogo
+  de estratégia em turnos num mapa hexagonal. Esse trabalho se relaciona bem pelo fato de usar as mesmas ferramentas, referências e abordagem.
 
-EXPLICAR UM POUCO MELHOR O JOGO
-
-# Slide Trabalhos Relacionados II
+## Slide Trabalhos Relacionados II
 
 - Desenvolvimento de um deep learning framework capaz de resolver problemas de locomoção parcialmente observáveis. Baseado em Recurrent Deterministic Policy Gradient (RDPG).
-- Algumas melhorias: (i) tail-step boostrap da diferença temporal, injeção de experiências externas de outros agentes, entre outros.
-- Utilização do ambiente Bipedal Walker do OpenAI Gym no modo Hardcore.
+- Algumas melhorias: (i) uso de memória temporal para conhecimento de estados passados (trajectory scanning), 
+  - injeção de experiências externas de outros agentes, entre outros.
+- Se relaciona pela utilização do ambiente Bipedal Walker do OpenAI Gym no modo Hardcore.
 
-ESCREVER NOTAS COM BASE NO ARTIGO
-
-# Slide Trabalhos Relacionados III
+## Slide Trabalhos Relacionados III
 
 - Desenvolvimento de um algoritmo híbrido de DDPG e PPO para resolver o problema BipedalWalker Hardcore.
 - Um algoritmo off-policy (DDPG) e um on-policy (PPO) trabalhando juntos.
-- Trazendo a eficiência de dados off-policy e usando o gradiente de alta variância de on-policy.
+- Usando DDPG para aprender de experiências passadas e PPO para melhorar a performance atual.
+- Relaciona por também usar Bipedal Walker.
 
-ESCREVER NOTAS COM BASE NO ARTIGO
+## Metodologia I
 
-# Metodologia I
+- Foi feita a utilização de Gymnasium uma biblioteca contendo uma diversa coleção de diferentes ambientes para aprendizado por reforço.
+- EXPLICAR CÓDIGO
 
-- Biblioteca contendo uma diversa coleção de diferentes ambientes para aprendizado por reforço.
+## Metodologia II
 
-# Metodologia II
+- Agora sobre nosso ambiente. Box2D Bipedal Walker.
+- O Box2D, uma engine de física para jogos 2D. Para quem conhece simuladores de física, essa engine seria equivalente uma versão simplificada de MuJoCo, 
+  - enquanto MuJoCo é um simulator de propósito geral podendo lidar com simulação de física avançada, o Box2D é só para jogos 2D mesmo.
+- Temos um robô com 4 juntas que caminha num terreno levemente desigual
+- Com objetivo de 300 pontos em 1600 passos de tempo, sendo que, uma queda da -100 pontos e torque no motor para andar custa pontos.
 
-- Box2D é uma engine de física para jogos 2D. Para quem conhece o ambiente de simuladores de física, essa engine seria uma versão simplificada de MuJoCo, enquanto MuJoCo é um simulator de propósito geral podendo lidar com simulação de física avançada ou mais simples 2D, o Box2D é só para jogos 2D mesmo.
+## Metodologia III
 
-# Metodologia III
+- Agora uma descrição mais técnica do ambiente;
+- Temos um espaço de ação de 4 elementos contínuos variando de -1 a 1
+- Um espaço de observação de 24 variáveis de observação variando de maneiras diferentes.
+- Estado de observação consiste de 
+  - (i) velocidade do ângulo do casco
+  - (ii) velocidade angular
+  - (iii) velocidade horizontal
+  - (iv) velocidade vertical
+  - (v) posição das juntas, sua velocidade angular e se a perna está em contato com o chão
+  - e (vii) 10 medições de telêmetro.
 
-- Estado consiste de (i) velocidade do ângulo do casco, (ii) velocidade angular, (iii) velocidade horizontal, (iv) velocidade vertical, (v) posição das juntas, sua velocidade angular e se a perna está em contato com o chão, e (vii) 10 medições de telêmetro.
+## Metodologia Solução I - I
 
-# Metodologia Solução I
+- Apesar do espaço ter muitas variáveis e ser contínuo, foi feito uma tentativa inicial com Q-learning
+  - Visto que, pelas informações disponíveis parecia mostrar um ambiente que poderiamos ter algum resultado interessante com essa técnica.
+- Para isso foi então necessário: LER SLIDE
 
-- Como o estado de observação é contínuo, o único jeito de se conseguir desenvolver uma solução com Q-learning seria discretizar esse espaço.
+## Metodologia Solução I - II
+
+LER SLIDE
+
+## Metodologia Solução I Resultados
+
+LER SLIDE
+
+## Metodologia Solução II - I
+
+- Como a gente não conseguiu ganhar do ambiente, mesmo nosso robô caminhando (vou mostrar em seguida). Uma outra abordagem foi utilizada principalmente por questão de comparação.
+- Utilizando uma técnica completamente adequada ao desafio, DDPG, feito para espaços de observação e ação contínuos.
+- Como uma rede neural DDPG é capaz de resolver diversos problemas diferentes sem precisar de modificação, apenas mudar os hiperparâmetros, não se foi construída uma
+  - implementação do zero, se obteve uma rede neural codificada utilizando PyTorch para Gym, se atualizou para usar Gymnasium e foi feita umas modificações extras para 
+  - funcionar no trabalho.
+- LER ETAPAS
+
+## Metodologia Solução II - II
+
+LER SLIDE
+
+## DEMO
+
+SÓ MOSTRAR E FALAR
 
 # Conclusão
 
 - Foi possível obter um maior aprofundamento na área de IA, desenvolvendo habilidades práticas tanto com ferramentas bem utilizadas na área, quanto com a formulação de soluções.
-- O resultado do trabalho consegue trazer uma contribuição como mais uma referência de desenvolvimento para a classe de problemas escolhido.
+- Eu vejo que o resultado do trabalho consegue trazer uma contribuição como mais uma referência de desenvolvimento para a classe de problemas escolhido.
+- Podemos observar que mesmo com estratégias simples, um bom entendimento do problema e uma boa formulação pode fazer com que tenhamos resultados interessantes. (Formiga x bazuca)
 - Melhorias futuras:
   - Mais implementações para comparação (TP3, PPO, etc)
-  - Implementação para ambientes mais complexos
-
-
-
-## DDPG Notes
-
-Adaptacao das ideias de DeepQLearning para espacos de acao contínuos
-aprende uma q-function e uma policy,
-off-policy data e bellman equation pra aprender a q-function e usa a q-function pra aprender a policy.
-ao invés de usar um argmax  em cima de todas possiveis acoes no estado (impossivel em um espaco de acoes contínuo)
-tenta conseguir um approximator para a*(s)
-usa MSBE para aproximar a q-function
-para achar uma policy det4erministica, como o espaco de acao é continuo, podemos assumir que q-function é diferenciavel com respeito a acao
-entao apenas é performado um gradient ascent 
-
-actor-critic, model free, deterministic policy gradient
-Ideia de lidar com espaço de ações contínuos
-Não conseguimos lidar com espaços de ações contínuos em q-learning e deep-q learning
-discretizar o espaço de açõ3es faz com que tenhamos uma quantidade enorme de ações
-deterministic -> policy manda a action ao invés de stochastic que manda uma probabilidade de cada ação.
-
-treinada off-policy com samples de um replay buffer para minimizar correlacoes entre amostras
-batch normalization
-
-o comportamento de um agente é definido por uma política que mapeia estados para uma funcao de probabilidade de ações
-off-policy simplifica a equacao de bellman já que nao tem que calcular com base em uma expectativa de retorno da distribuicao probabilistica de acoes
-
-em DDPG:
-Um Ator especifica uma política de maneira deterministica, mapeando estados para uma ação específica
-O Critico usa a ação de bellman em cima do resultado do agente, o ator entao é atualizado encadeamento pelo crítico.
-
-aprender em mini-batches, não online.
-replay buffer é um cache.
-a cada tempo o ator e o critico sao atualizados sampleando um minibatch uniformemente do buffer.
-
-uma cópia do ator e critico (target actor and critic) para "soft" update os valores, fazendo com que os target values mudem devagar, aumentando a estavilidade
-usa os targets para ter targets estaveis e treinar o critico sem divergencia.
-target network delays the propagation of value estimations
-
-como os valores de observacao podem ser de tipos diferentes, tamanhos diferentes, eles sao normalizados com uma tecnica de 
-batch normalization, normaliza cada dimensao dos samples para ter uma media de unidade e variancia
-
-para explorar tem uma política diferente, que adiciona um noise a política do ator, de maneira que a ação é sampleada e adicionada
-um noise.
-
-
-
-Trick Two: Target Networks. Q-learning algorithms make use of target networks. The term
-
-r + \gamma (1 - d) \max_{a'} Q_{\phi}(s',a')
-
-is called the target, because when we minimize the MSBE loss, we are trying to make the Q-function be more like this target. Problematically, the target depends on the same parameters we are trying to train: \phi. This makes MSBE minimization unstable. The solution is to use a set of parameters which comes close to \phi, but with a time delay—that is to say, a second network, called the target network, which lags the first. The parameters of the target network are denoted \phi_{\text{targ}}.
-
-In DQN-based algorithms, the target network is just copied over from the main network every some-fixed-number of steps. In DDPG-style algorithms, the target network is updated once per main network update by polyak averaging:
-
-\phi_{\text{targ}} \leftarrow \rho \phi_{\text{targ}} + (1 - \rho) \phi,
-
-where \rho is a hyperparameter between 0 and 1 (usually close to 1). (This hyperparameter is called polyak in our code).
-
-the weights of the target q network is updated by slowly tracking the learned networks via soft updates
-
-Ornstein–Uhlenbeck
-
-# Recurrent Deterministic Policy Gradient Method for Bipedal Locomotion on Rough Terrain Challenge notes
-RDPG
-como robos nao tem uma observacao completa na vida real e muitas das leituras podem ter bastante distorcao, o algoritmo busca resolver problemas de aprendizado com observacao incompleta
-se usa o estado do passado para complementar as informacoes do estado atual.
-uso de memória temporal para ter conhecidomento dos estados passados (Long Short Term Memory LSTM)
-RDPG é uma aplicação de DPG
-Critic aproxima o valor state-action e manda o valor para o Actor em uma fase de policy improvement na forma de action gradient 
-TD gradient do minibatch do replay buffer, critic atualizado minimizando TD loss, depois pegado o actor gradient to minibatch e atualizado o ator
-
-hidden state initialization via trajectory scanning
-
-experience injection for behaviour transfer
-um agente treinado teacher, um agente aluno. experiencia é enviada na forma de trajetorias de state-action-reward pairs.
-injetando trajetorias no replay buffer de um novo agente.
-
-# Environment Interaction of Bipedal Robot using Model-free COntrol Framework Hybrid Off-policy and On-policy Reinforcemente Learning ALgorithm notes
-
-Combination of DDPG and PPO,
-DDPG tem problema de usar dados antigos, que podem ser diferentes da nova policy para a funçãp reward
-uso de PPO para estabilidade
-
-They use off-policy learning to learn from past experience and on-policy learning to improve the robot's current performance. The algorithm is based on a combination of a deep deterministic policy gradient algorithm and a PPO.
-
-to learn from past experience and improve the policy in the long-term
-
-PPO works by updating the policy parameters in small steps at each iteration, where the step size is controlled by a hyperparameter called the clipping parameter. The key idea behind PPO is to impose a constraint on the update step to ensure that the new policy is not too different from the previous policy. This constraint helps to prevent the policy from changing too rapidly, which can lead to instability and poor performance.
-Overall, PPO is a powerful algorithm for reinforcement learning that balances the exploration-exploitation tradeoff by dynamically adjusting the step size of the policy update. 
+  - Implementação para ambientes mais complexos.

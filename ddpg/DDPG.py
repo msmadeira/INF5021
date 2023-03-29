@@ -5,6 +5,7 @@ import os
 import numpy as np
 
 import gymnasium as gym
+import matplotlib.pyplot as plt
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -16,9 +17,7 @@ Implementation of Deep Deterministic Policy Gradients (DDPG) with pytorch
 Original paper: https://arxiv.org/abs/1509.02971
 Not the author's implementation !
 '''
-
-def episode_trigger(x):
-    return x > 1000
+training_rewards = []
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--mode', default='train', type=str) # mode = 'train' or 'test'
@@ -41,7 +40,7 @@ parser.add_argument('--log_interval', default=50, type=int) #
 parser.add_argument('--load', default=False, type=bool) # load model
 parser.add_argument('--render_interval', default=100, type=int) # after render_interval, the env.render() will work
 parser.add_argument('--exploration_noise', default=0.1, type=float)
-parser.add_argument('--max_episode', default=100000, type=int) # num of games
+parser.add_argument('--max_episode', default=5000, type=int) # num of games
 parser.add_argument('--print_log', default=5, type=int)
 parser.add_argument('--update_iteration', default=200, type=int)
 args = parser.parse_args()
@@ -49,7 +48,6 @@ args = parser.parse_args()
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 script_name = os.path.basename(__file__)
 env = gym.make(args.env_name)
-env = gym.wrappers.RecordVideo(env, 'videos', episode_trigger=episode_trigger)
 
 if args.seed:
     env.seed(args.random_seed)
@@ -250,6 +248,7 @@ def main():
                 total_reward += reward
             total_step += step+1
             print("Total T:{} Episode: \t{} Total Reward: \t{:0.2f}".format(total_step, i, total_reward))
+            training_rewards.append(total_reward)
             agent.update()
 
             if i % args.log_interval == 0:
@@ -259,3 +258,12 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+# Visualizing results and total reward over all episodes
+x = range(args.max_episode)
+plt.plot(x, training_rewards)
+plt.xlabel('Episódio')
+plt.ylabel('Recompensa total de treinamento')
+plt.title('Recompensa total em todos episódios de treinamento')
+plt.show()

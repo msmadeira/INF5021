@@ -73,6 +73,7 @@ imageOrder: 2
 - Aprender através da interação buscando atingir um objetivo.
 - Interações entre Agente e o Ambiente.
   - Espaço de ações, e espaço de observação (estado).
+- On-policy / Off-policy
 - Q-learning
 </div>
 
@@ -332,7 +333,7 @@ imageOrder: 2
 <div class="grid grid-cols-2 gap-x-5 px-5">
 <div class="flex flex-col">
   <img src="/img/resultado-solucao-1.jpg" class="max-w-full"/>
-  <span class="mx-auto mt-3 text-center">Agente DDPG - Recompensa média -89.9</span>
+  <span class="mx-auto mt-3 text-center">Agente Q-learning - Recompensa média -89.9</span>
 </div>
 <div class="flex flex-col">
   <img src="/img/resultado-random.jpg" class="max-w-full"/>
@@ -354,7 +355,7 @@ imageOrder: 2
 
 - Utilização de uma rede neural codificada utilizando PyTorch, derivada a partir do paper original [2015].
 - Etapas:
-  - Implementação do código para fazer uso da rede neural (parâmetros XXXXX)
+  - Implementação do código para fazer uso da rede neural (tau: 0.005, α: 0.0001, γ: 0.99, batch_size: 100)
   - Treinamento
   - Comparação
 
@@ -408,6 +409,7 @@ position: center
 - Maior aprofundamento na área de IA.
   - Desenvolvimento de habilidades práticas com ferramentas e formulação de soluções.
 - Trabalho traz a contribuição de ser mais uma referência de desenvolvimento para a classe de problemas.
+- Mesmo com estratégias simples, um bom entendimento do problema e uma boa formulação pode fazer com que tenhamos resultados interessantes.
 - Melhorias futuras:
   - Mais implementações para comparação (TP3, PPO, etc).
   - Implementação para ambientes mais complexos (Hardcore).

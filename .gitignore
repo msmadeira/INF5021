@@ -1,3 +1,4 @@
 .idea
 /videos
 /ddpg/*/events.out.*
+/ddpg/videos
