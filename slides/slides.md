@@ -249,7 +249,7 @@ imageOrder: 2
 - Robô com 4 juntas que caminha num terreno levemente desigual.
 - Objetivo de 300 pontos em 1600 passos.
   - Queda -> -100 pontos. 
-  - Toque ao motor -> custa uma pequena quantia de pontos.
+  - Torque ao motor -> custa uma pequena quantia de pontos.
 </div>
 
 <BarBottom  title="INF5021 - Matheus Madeira">
