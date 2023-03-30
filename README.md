@@ -9,7 +9,3 @@ Had to add `export PATH="/opt/homebrew/opt/swig@3/bin:$PATH"` to `.zshrc`.
 Python 3.6 is required.
 
 Run `pip install -r requirements.txt` inside `ddpg` folder.
-
-## TODO 
-- [ ] Upload final presentation to website
-- [ ] Extra: tirar mensagem de "em construção da raíz" de mathsmadeira.com
