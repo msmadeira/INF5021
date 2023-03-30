@@ -12,5 +12,4 @@ Run `pip install -r requirements.txt` inside `ddpg` folder.
 
 ## TODO 
 - [ ] Upload final presentation to website
-- [ ] Treinar e diminuir tempo de apresentação
 - [ ] Extra: tirar mensagem de "em construção da raíz" de mathsmadeira.com

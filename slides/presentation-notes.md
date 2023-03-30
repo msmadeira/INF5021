@@ -6,11 +6,9 @@ Boa tarde, meu nome é Matheus Madeira e o meu trabalho é: "Aprendizado por ref
 
 ## Introdução
 
-- Simulação física é uma área de extrema relevância para a computação, tanto para estudar características físicas, quanto para resolver problemas do mundo real.
-  - Mas uma simulação física, geralmente necessita de muitas variáveis devida a alta complexidade desses problemas. 
-  - Uma alternativa para diminuir a complexidade desses problemas e ainda assim conseguir os estudar é ir para o mundo 2D.
+- Temos que simulação física é uma área de extrema relevância para a computação, tanto para estudar características físicas, 
+  - quanto para resolver problemas do mundo real. Porém geralmente complexo, então uma boa simplificação é ir para o espaço 2D.
 - Esse trabalho busca servir como mais uma referência de aplicação de IA.
-- Implementando um Agente de aprendizado por reforço para um ambiente de simulação física em 2D (<span class="text-sm">Python, Gymnasium</span>).
 
 ## Objetivos
 
@@ -21,17 +19,13 @@ LER SLIDE
 - Problemas de aprendizado por reforço envolvem entender como mapear situações a ações, de maneira a maximizar uma recompensa. 
   - Onde o agente não é ensinado que ações tomar, ele deve descobrir qual a maior recompensa tentando. 
   - Notadamente, esse agente deve conseguir compreender o estado do ambiente e conseguir tomar decisões que afetem esse estado.
-  - Uma distinção clara de outro método, como, por exemplo, aprendizado supervisionado, é que esse aprende por um conjunto de exemplos organizados por um supervisor externo.
-  - Já aprendizado por reforço um agente deve aprender a partir da sua própria experiência.
-- Dito isso, aprendizado por reforço é composto por interações entre um agente e o ambiente, o mundo que o agente vive e interage.
 - Esse ambiente tem um espaço de ações possíveis e um espaço de observação (estado)
 - Existem diversos algoritmos diferentes para reinforcement learning, sendo divididos entre off-policy e on-policy.
   - On-policy o agente escolhendo as ações de acordo com uma policy,
   - Off-policy o agente não escolhendo as ações, aprendendo por exploração.
 - Especificamente sobre Q-learning, algoritmo off-policy
-- O modelo trabalha com uma tabela Q, que contém um valor aproximado da função para cada estado.
-  - Essa tabela começa zerada. Durante o processo de aprendizado é preenchida.
-  - Esse processo de aprendizado ocorre explorando em alguns momentos e tomando a ação de maior valor em outras vezes.
+- O modelo trabalha com uma tabela Q, que contém um valor aproximado da função para cada estado. Que durante o processo de aprendizado é preenchida.
+  - Faz uso de exploração em alguns momentos e tomando a ação de maior valor em outros.
   - Quando o agente escolhe uma ação e muda para outro estado o seu valor recompensa será recalculado, normalmente pela Equação de Bellman.
 
 ## Fundamentação Teórica II
@@ -45,8 +39,7 @@ LER SLIDE
 - Usado para espaços de ação e observação contínuos.
 - O que essa mistura nos diz? nos diz que o algoritmo aprende uma Q-function e uma Policy em simultâneo.
 - Isso acontece se treinando uma rede neural para aprender uma q-function e usando a q-function para aprender uma policy, essa policy tentando ser algo que aproxime 
-  - a melhor ação dado um estado, já que não podemos só iterar sobre uma lista por ser contínuo.
-  - Para obter essa melhor ação, os autores assumem que a q-function é diferenciavel em relação à ação. Então realizam um gradient ascent.
+  - a melhor ação dado um estado.
 - Para realizar isso que descrevi aqui, o algoritmo usa então uma estrutura de 4 redes neurais, uma Actor, uma critic e duas target.
   - Um Ator especifica uma política de maneira deterministica, mapeando estados para uma ação específica
   - O Crítico avalia a política do agente com uma equação, o ator entao é atualizado em encadeamento pelo crítico.

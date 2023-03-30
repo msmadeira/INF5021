@@ -22,7 +22,6 @@ image: './img/slide2.gif'
 
 - Simulação física é uma área de extrema relevância para a computação.
 - Esse trabalho busca servir como mais uma referência de aplicação de IA.
-- Agente de aprendizado de reforço para um ambiente de simulação física em 2D (<span class="text-sm">Python, Gymnasium</span>).
 
 <BarBottom  title="INF5021 - Matheus Madeira">
   <Item text="">
@@ -37,7 +36,7 @@ image: './img/slide2.gif'
 <div class="flex flex-col mx-auto">
 <div class="p-3 border border-purple-200 rounded-md shadow-md mb-8 w-150">
 <span class="text-2xl font-semibold mb-2 border-b-2 border-purple inline-flex">Objetivo Geral</span> <br>
-<span class="ml-2 text-xl leading-relaxed">Desenvolver um agente por aprendizado por reforço para o ambiente Box2D Bipedal Walker.</span>
+<span class="ml-2 text-xl leading-relaxed">Desenvolver um agente de aprendizado por reforço para o ambiente Box2D Bipedal Walker.</span>
 </div>
 
 <div class="p-3 border border-purple-200 rounded-md shadow-md w-150">
